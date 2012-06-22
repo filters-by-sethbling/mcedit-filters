@@ -1,3 +1,10 @@
+mandelbrot.py and mandelbulb.py
+===============================
+
+Filters to render the [Mandelbrot](http://en.wikipedia.org/wiki/Mandelbrot_set) and [Mandelbulb](http://en.wikipedia.org/wiki/Mandelbulb) fractals in minecraft.
+
+http://www.youtube.com/watch?v=X3Esx-jWPv4
+
 create-busses.py
 ================
 
