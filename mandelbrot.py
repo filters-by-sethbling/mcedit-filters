@@ -12,23 +12,14 @@ def perform(level, box, options):
             z = dz * 4.0 / depth - 2.0
 
             iterations = 0
-            C = (x, z)
-            Z = (0, 0)
+            C = complex(x, z)
+            Z = complex(0)
 
-            while complexAbs(Z) < 2 and iterations < 15:
-                Z = complexAdd(complexMult(Z, Z), C)
-                iterations = iterations + 1
+            while abs(Z) < 2 and iterations < 15:
+                Z = Z*Z + C
+                iterations += 1
 
             level.setBlockAt(box.minx + dx, box.miny, box.minz + dz, 35)
             level.setBlockDataAt(box.minx + dx, box.miny, box.minz + dz, ColorList[iterations])
 
     level.markDirtyBox(box)
-
-def complexAbs((r, i)):
-    return r*r+i*i
-
-def complexMult((r1, i1), (r2, i2)):
-    return (r1*r2 - i1*i2, r1*i2 + r2*i1)
-
-def complexAdd((r1, i1), (r2, i2)):
-    return (r1+r2, i1+i2)
